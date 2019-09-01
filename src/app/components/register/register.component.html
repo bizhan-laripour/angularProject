@@ -1,0 +1,18 @@
+
+
+<form ngForm #registerForm>
+  <mat-form-field>
+    <input matInput #user [(ngModel)]="name" name="name" placeholder="name">
+  </mat-form-field><br/>
+  <mat-form-field>
+    <input matInput #user [(ngModel)]="lastName" name="name" placeholder="lastName">
+  </mat-form-field><br/>
+  <mat-form-field>
+    <input matInput #user [(ngModel)]="username" name="name" placeholder="username">
+  </mat-form-field><br/>
+  <mat-form-field>
+    <input matInput #pass [(ngModel)]="password" name="password" placeholder="password">
+  </mat-form-field>
+  <br/>
+<!--  <button mat-stroked-button color="primary" (click)="">login</button>-->
+</form>

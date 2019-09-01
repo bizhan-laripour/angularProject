@@ -1,0 +1,21 @@
+<h4>this is login page</h4>
+
+<form ngForm #loginForm>
+  <mat-form-field>
+    <input matInput #user [(ngModel)]="username" name="name" placeholder="username">
+  </mat-form-field><br/>
+  <mat-form-field>
+    <input matInput #pass [(ngModel)]="password" name="password" placeholder="password">
+  </mat-form-field>
+  <br/>
+  <button mat-stroked-button color="primary" (click)="setMember()">login</button>
+</form><br/>
+
+<form ngForm #testForm>
+  <button mat-stroked-button (click)="getMember()">go</button>
+</form>
+<a routerLink="/home">go home</a>
+<br/>
+<div *ngFor="let mem of member">
+  {{mem.username}}
+</div>
