@@ -17,5 +17,7 @@
     <input matInput #pass [(ngModel)]="password" name="password" placeholder="password">
   </mat-form-field>
   <br/>
-  <button mat-stroked-button color="primary" (click)="register()">register</button>
+  <button mat-stroked-button color="primary" (click)="register()">register</button><br/>
+<!--  <button mat-stroked-button color="warn" (click)="logOut()">logout</button>-->
+  <a routerLink="/home">back</a>
 </form>

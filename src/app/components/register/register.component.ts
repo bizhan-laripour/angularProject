@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {RegisterService} from '../../services/register.service';
 import {Member} from '../../model/Member';
+import {AuthService} from '../../services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -16,7 +17,8 @@ export class RegisterComponent implements OnInit {
   message: string;
   registered = false;
 
-  constructor(public reg: RegisterService) {
+  constructor(public reg: RegisterService, public authService: AuthService) {
+
   }
 
   ngOnInit() {
@@ -28,7 +30,7 @@ export class RegisterComponent implements OnInit {
     mem.username = this.username;
     mem.name = this.name;
     mem.lastName = this.lastName;
-    mem.id = 1;
+    mem.id = null;
     return this.reg.register(mem).subscribe(res => {
       if (res != null) {
         this.message = 'you registered successfully';
@@ -38,6 +40,10 @@ export class RegisterComponent implements OnInit {
         this.registered = false;
       }
     });
+  }
+
+  logOut() {
+    this.authService.logout();
   }
 
 

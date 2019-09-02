@@ -21,6 +21,11 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (this.authService.loggedIn) {
+      this.rout.navigate(['/welcome']);
+    } else {
+      this.rout.navigate(['']);
+    }
   }
 
   setMember() {
@@ -40,6 +45,7 @@ export class LoginComponent implements OnInit {
     loginDto.password = this.password;
     return this.loginservice.login(loginDto).subscribe(res => {
       this.token = res.result;
+      // sessionStorage.setItem('token' , this.token);
       if (this.token != null) {
         this.authService.login();
         this.rout.navigate(['welcome']);

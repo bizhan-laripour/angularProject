@@ -2,5 +2,13 @@
 
 <br/>
 now you can see all of the users in the data base<br/>
+<form ngForm #findAlls>
+  <button mat-stroked-button (click)="findAll()">show me the members</button>
+  <br/>
+  <button mat-stroked-button color="warn" (click)="logOut()">logout</button>
 
+</form>
 
+<p *ngFor="let mem of members">
+  {{mem.name}}   {{mem.lastName}}  {{mem.username}}  {{mem.password}}
+</p>

@@ -3,16 +3,17 @@
 <form ngForm #loginForm>
   <mat-form-field>
     <input matInput #user [(ngModel)]="username" name="name" placeholder="username">
-  </mat-form-field><br/>
+  </mat-form-field>
+  <br/>
   <mat-form-field>
     <input matInput #pass [(ngModel)]="password" name="password" placeholder="password">
   </mat-form-field>
   <br/>
   <button mat-stroked-button color="primary" (click)="login()">login</button>
-  <button mat-stroked-button color="warn" (click)="logOut()">logOut</button>
 </form><br/>
 
-<a routerLink="/register"> i am not a member</a>
+<a routerLink="/register"> i am not a member</a><br/><br/>
+
+<a routerLink="/welcome">guard test</a>
 <br/>
 
-{{token}}

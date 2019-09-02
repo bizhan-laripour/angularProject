@@ -15,6 +15,7 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {RegisterService} from './services/register.service';
 import {AuthService} from './services/auth.service';
 import {AuthGuard} from './guard/auth.guard';
+import {WellcomeService} from './services/wellcome.service';
 
 
 const routs: Route[] = [
@@ -44,7 +45,7 @@ const routs: Route[] = [
     RouterModule.forRoot(routs),
     HttpClientModule
   ],
-  providers: [LoginService , RegisterService , AuthService],
+  providers: [LoginService , RegisterService , AuthService , WellcomeService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
