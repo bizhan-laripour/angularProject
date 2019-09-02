@@ -1,5 +1,5 @@
 <h4>this is login page</h4>
-
+<p [ngStyle]="{'color' : 'red'}">{{message}}</p>
 <form ngForm #loginForm>
   <mat-form-field>
     <input matInput #user [(ngModel)]="username" name="name" placeholder="username">
@@ -8,14 +8,11 @@
     <input matInput #pass [(ngModel)]="password" name="password" placeholder="password">
   </mat-form-field>
   <br/>
-  <button mat-stroked-button color="primary" (click)="setMember()">login</button>
+  <button mat-stroked-button color="primary" (click)="login()">login</button>
+  <button mat-stroked-button color="warn" (click)="logOut()">logOut</button>
 </form><br/>
 
-<form ngForm #testForm>
-  <button mat-stroked-button (click)="getMember()">go</button>
-</form>
-<a routerLink="/home">go home</a>
+<a routerLink="/register"> i am not a member</a>
 <br/>
-<div *ngFor="let mem of member">
-  {{mem.username}}
-</div>
+
+{{token}}

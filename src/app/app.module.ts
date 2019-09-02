@@ -11,12 +11,17 @@ import {RegisterComponent} from './components/register/register.component';
 import {WellcomeComponent} from './components/wellcome/wellcome.component';
 import {LoginService} from './services/login.service';
 import {Route, RouterModule} from '@angular/router';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {RegisterService} from './services/register.service';
+import {AuthService} from './services/auth.service';
+import {AuthGuard} from './guard/auth.guard';
 
 
 const routs: Route[] = [
   {path: '', component: LoginComponent},
-  {path: 'home', component: RegisterComponent},
-
+  {path: 'home', component: LoginComponent},
+  {path : 'register' , component : RegisterComponent},
+  {path : 'welcome' , canActivate : [AuthGuard] , component : WellcomeComponent}
 ];
 
 @NgModule({
@@ -36,9 +41,10 @@ const routs: Route[] = [
     BrowserAnimationsModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    RouterModule.forRoot(routs)
+    RouterModule.forRoot(routs),
+    HttpClientModule
   ],
-  providers: [LoginService],
+  providers: [LoginService , RegisterService , AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
