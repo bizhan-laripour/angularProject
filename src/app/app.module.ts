@@ -21,8 +21,9 @@ import {WellcomeService} from './services/wellcome.service';
 const routs: Route[] = [
   {path: '', component: LoginComponent},
   {path: 'home', component: LoginComponent},
-  {path : 'register' , component : RegisterComponent},
-  {path : 'welcome' , canActivate : [AuthGuard] , component : WellcomeComponent}
+  {path: 'register', component: RegisterComponent},
+  {path: 'welcome', canActivate: [AuthGuard], component: WellcomeComponent},
+//  {path: '**', component: LoginComponent}
 ];
 
 @NgModule({
@@ -45,7 +46,7 @@ const routs: Route[] = [
     RouterModule.forRoot(routs),
     HttpClientModule
   ],
-  providers: [LoginService , RegisterService , AuthService , WellcomeService],
+  providers: [LoginService, RegisterService, AuthService, WellcomeService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -3,6 +3,8 @@ import {LoginService} from '../../services/login.service';
 import {WellcomeService} from '../../services/wellcome.service';
 import {Member} from '../../model/Member';
 import {AuthService} from '../../services/auth.service';
+import {Router} from '@angular/router';
+import {root} from 'rxjs/internal-compatibility';
 
 @Component({
   selector: 'app-wellcome',
@@ -13,7 +15,7 @@ export class WellcomeComponent implements OnInit {
 
   members: Member[];
 
-  constructor(private welcomeService: WellcomeService , private authenticate: AuthService) {
+  constructor(private welcomeService: WellcomeService, private authenticate: AuthService , private rout: Router) {
   }
 
   ngOnInit() {

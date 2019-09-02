@@ -5,23 +5,38 @@ import {Injectable} from '@angular/core';
 })
 export class AuthService {
 
-  loggedIn = false;
+  public log: boolean;
 
   constructor() {
   }
 
   login() {
-    this.loggedIn = true;
+    localStorage.setItem('login', 'true');
   }
 
   logout() {
-    this.loggedIn = false;
+    localStorage.setItem('login', 'false');
   }
 
   isAdmin() {
+    if (localStorage.getItem('login') === 'false') {
+      this.log = false;
+    } else {
+      this.log = true;
+    }
+    localStorage.setItem('log', 'isLoged');
     const isUserAdmin = new Promise((resolve, reject) => {
-      resolve(this.loggedIn);
+      resolve(this.log);
     });
     return isUserAdmin;
+  }
+
+
+  getLog(): boolean {
+    if (localStorage.getItem('log') != null) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }
