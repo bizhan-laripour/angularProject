@@ -1,5 +1,5 @@
 # AngularProject
-This project contains login page and register 
+This project contains login page and register page and
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.2.
 
