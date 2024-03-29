@@ -1,5 +1,5 @@
 # AngularProject
-This project contains login page and register page and connects with a spring boot application named AngularWS
+This project contains login page and register page and connects with a spring boot application named AngularWS in my repositoey
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.2.
 
